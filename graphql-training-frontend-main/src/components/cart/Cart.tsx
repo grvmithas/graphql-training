@@ -17,7 +17,7 @@ const Cart: React.FC = () => {
 
   const calculateTotal = () => {
     if (!cart?.items) return 0;
-    return cart.items.reduce((total, item) => {
+    return cart?.items?.reduce((total, item) => {
       return total + (item.product.price * item.quantity);
     }, 0);
   };
@@ -40,7 +40,7 @@ const Cart: React.FC = () => {
     );
   }
 
-  if (!cart || cart.items.length === 0) {
+  if (!cart || cart?.items?.length === 0) {
     return (
       <div className="container">
         <div className="empty-cart">

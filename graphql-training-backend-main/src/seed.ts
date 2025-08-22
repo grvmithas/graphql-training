@@ -19,22 +19,10 @@ export const seedDatabase = async () => {
 
     // Create categories
     const categories = [
-      {
-        name: 'Electronics',
-        description: 'Electronic devices and gadgets'
-      },
-      {
-        name: 'Clothing',
-        description: 'Apparel and fashion items'
-      },
-      {
-        name: 'Books',
-        description: 'Physical and digital books'
-      },
-      {
-        name: 'Home & Kitchen',
-        description: 'Household appliances and kitchenware'
-      }
+      { name: 'Electronics', description: 'Electronic devices and gadgets' },
+      { name: 'Clothing', description: 'Apparel and fashion items' },
+      { name: 'Books', description: 'Physical and digital books' },
+      { name: 'Home & Kitchen', description: 'Household appliances and kitchenware' }
     ];
 
     const categoryRepository = AppDataSource.getRepository(Category);
@@ -53,54 +41,26 @@ export const seedDatabase = async () => {
 
     // Create products
     const products = [
-      {
-        name: 'Smartphone',
-        description: 'Latest model smartphone with high-resolution display',
-        price: 699.99,
-        stockQuantity: 50,
-        imageUrl: 'https://example.com/smartphone.jpg',
-        category: createdCategories[0]
-      },
-      {
-        name: 'Laptop',
-        description: 'Powerful laptop for work and gaming',
-        price: 1299.99,
-        stockQuantity: 30,
-        imageUrl: 'https://example.com/laptop.jpg',
-        category: createdCategories[0]
-      },
-      {
-        name: 'T-shirt',
-        description: 'Comfortable cotton t-shirt',
-        price: 24.99,
-        stockQuantity: 100,
-        imageUrl: 'https://example.com/tshirt.jpg',
-        category: createdCategories[1]
-      },
-      {
-        name: 'Jeans',
-        description: 'Stylish jeans for everyday wear',
-        price: 49.99,
-        stockQuantity: 75,
-        imageUrl: 'https://example.com/jeans.jpg',
-        category: createdCategories[1]
-      },
-      {
-        name: 'Novel',
-        description: 'Bestselling novel by a renowned author',
-        price: 19.99,
-        stockQuantity: 200,
-        imageUrl: 'https://example.com/novel.jpg',
-        category: createdCategories[2]
-      },
-      {
-        name: 'Coffee Maker',
-        description: 'Automatic coffee maker for home use',
-        price: 89.99,
-        stockQuantity: 40,
-        imageUrl: 'https://example.com/coffeemaker.jpg',
-        category: createdCategories[3]
-      }
+      { name: 'Smartphone', description: 'Latest model smartphone with high-resolution display', price: 699.99, stockQuantity: 50, imageUrl: 'https://example.com/smartphone.jpg', category: createdCategories[0] },
+      { name: 'Laptop', description: 'Powerful laptop for work and gaming', price: 1299.99, stockQuantity: 30, imageUrl: 'https://example.com/laptop.jpg', category: createdCategories[0] },
+      { name: 'Tablet', description: 'Portable tablet with high-resolution screen', price: 499.99, stockQuantity: 40, imageUrl: 'https://example.com/tablet.jpg', category: createdCategories[0] },
+      { name: 'Headphones', description: 'Noise-cancelling over-ear headphones', price: 199.99, stockQuantity: 60, imageUrl: 'https://example.com/headphones.jpg', category: createdCategories[0] },
+      { name: 'Smartwatch', description: 'Smartwatch with fitness tracking', price: 149.99, stockQuantity: 70, imageUrl: 'https://example.com/smartwatch.jpg', category: createdCategories[0] },
+      { name: 'T-shirt', description: 'Comfortable cotton t-shirt', price: 24.99, stockQuantity: 100, imageUrl: 'https://example.com/tshirt.jpg', category: createdCategories[1] },
+      { name: 'Jeans', description: 'Stylish jeans for everyday wear', price: 49.99, stockQuantity: 75, imageUrl: 'https://example.com/jeans.jpg', category: createdCategories[1] },
+      { name: 'Jacket', description: 'Warm winter jacket', price: 89.99, stockQuantity: 40, imageUrl: 'https://example.com/jacket.jpg', category: createdCategories[1] },
+      { name: 'Sneakers', description: 'Comfortable running sneakers', price: 59.99, stockQuantity: 80, imageUrl: 'https://example.com/sneakers.jpg', category: createdCategories[1] },
+      { name: 'Hat', description: 'Stylish summer hat', price: 19.99, stockQuantity: 50, imageUrl: 'https://example.com/hat.jpg', category: createdCategories[1] },
+      { name: 'Novel', description: 'Bestselling novel by a renowned author', price: 19.99, stockQuantity: 200, imageUrl: 'https://example.com/novel.jpg', category: createdCategories[2] },
+      { name: 'Cookbook', description: 'Collection of recipes from top chefs', price: 29.99, stockQuantity: 90, imageUrl: 'https://example.com/cookbook.jpg', category: createdCategories[2] },
+      { name: 'Biography', description: 'Inspiring biography of a famous figure', price: 24.99, stockQuantity: 120, imageUrl: 'https://example.com/biography.jpg', category: createdCategories[2] },
+      { name: 'Science Fiction', description: 'Exciting science fiction novel', price: 14.99, stockQuantity: 150, imageUrl: 'https://example.com/scifi.jpg', category: createdCategories[2] },
+      { name: 'Mystery', description: 'Thrilling mystery novel', price: 18.99, stockQuantity: 130, imageUrl: 'https://example.com/mystery.jpg', category: createdCategories[2] },
+      { name: 'Coffee Maker', description: 'Automatic coffee maker for home use', price: 89.99, stockQuantity: 40, imageUrl: 'https://example.com/coffeemaker.jpg', category: createdCategories[3] },
+      { name: 'Blender', description: 'High-speed blender for smoothies', price: 79.99, stockQuantity: 50, imageUrl: 'https://example.com/blender.jpg', category: createdCategories[3] },
+      { name: 'Toaster', description: 'Two-slice toaster with browning control', price: 29.99, stockQuantity: 60, imageUrl: 'https://example.com/toaster.jpg', category: createdCategories[3] },
+      { name: 'Microwave', description: 'Compact microwave oven', price: 99.99, stockQuantity: 30, imageUrl: 'https://example.com/microwave.jpg', category: createdCategories[3] },
+      { name: 'Vacuum Cleaner', description: 'Bagless vacuum cleaner with powerful suction', price: 129.99, stockQuantity: 25, imageUrl: 'https://example.com/vacuum.jpg', category: createdCategories[3] }
     ];
 
     const productRepository = AppDataSource.getRepository(Product);
@@ -116,14 +76,14 @@ export const seedDatabase = async () => {
 
     // Create test user
     const userRepository = AppDataSource.getRepository(User);
-    const existingUser = await userRepository.findOneBy({ email: 'user@example.com' });
+    const existingUser = await userRepository.findOneBy({ email: '<a href="mailto:user@example.com">user@example.com</a>' });
     
     if (!existingUser) {
       const hashedPassword = await bcrypt.hash('password123', 12);
       const user = userRepository.create({
         firstName: 'Test',
         lastName: 'User',
-        email: 'user@example.com',
+        email: '<a href="mailto:user@example.com">user@example.com</a>',
         password: hashedPassword
       });
       await userRepository.save(user);

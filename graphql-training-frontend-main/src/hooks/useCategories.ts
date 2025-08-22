@@ -14,7 +14,8 @@ import type {
 
 export const useCategories = () => {
   const { data, loading, error, refetch } = useQuery<GetCategoriesData>(GET_CATEGORIES, {
-    fetchPolicy: 'cache-and-network',
+  fetchPolicy: 'network-only', // Used for first execution
+  nextFetchPolicy: 'cache-first',
     errorPolicy: 'all',
   });
 

@@ -1,4 +1,4 @@
-import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, Column, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
 import { Field, Float, Int, ObjectType } from 'type-graphql';
 import { BaseEntity } from './BaseEntity';
 import { Category } from './Category';
@@ -28,8 +28,9 @@ export class Product extends BaseEntity {
   imageUrl: string;
 
   @Field(() => Category)
-  @ManyToOne(() => Category, category => category.products)
-  category: Category;
+  @ManyToOne(() => Category, { nullable: false })
+  @JoinColumn({ name: 'categoryId' })
+  category!: Category;
 
   @Field(() => [CartItem], { nullable: true })
   @OneToMany(() => CartItem, cartItem => cartItem.product)
